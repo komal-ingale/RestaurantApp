@@ -4,8 +4,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -15,7 +17,6 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "restaurant")
-
 public class Restaurant {
 	@Id
 	@GeneratedValue
@@ -28,7 +29,7 @@ public class Restaurant {
 	@Column(name = "cuisine_type")
 	@Enumerated(EnumType.STRING)
 	private CuisineTypeEnum cuisineType;
-	
+
 	@Column(name = "is_bar")
 	private boolean isBar;
 
@@ -55,5 +56,104 @@ public class Restaurant {
 
 	@Column(name = "discount")
 	private String discount;
+
+	@OneToOne(fetch = FetchType.LAZY)
+	private Address address;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public CuisineTypeEnum getCuisineType() {
+		return cuisineType;
+	}
+
+	public void setCuisineType(CuisineTypeEnum cuisineType) {
+		this.cuisineType = cuisineType;
+	}
+
+	public boolean isBar() {
+		return isBar;
+	}
+
+	public void setBar(boolean isBar) {
+		this.isBar = isBar;
+	}
+
+	public PaymentOptionEnum getPaymentOption() {
+		return PaymentOption;
+	}
+
+	public void setPaymentOption(PaymentOptionEnum paymentOption) {
+		PaymentOption = paymentOption;
+	}
+
+	public String getRange() {
+		return range;
+	}
+
+	public void setRange(String range) {
+		this.range = range;
+	}
+
+	public String getSpeciality() {
+		return speciality;
+	}
+
+	public void setSpeciality(String speciality) {
+		this.speciality = speciality;
+	}
+
+	public boolean isVeg() {
+		return isVeg;
+	}
+
+	public void setVeg(boolean isVeg) {
+		this.isVeg = isVeg;
+	}
+
+	public boolean isKitchenSeparate() {
+		return isKitchenSeparate;
+	}
+
+	public void setKitchenSeparate(boolean isKitchenSeparate) {
+		this.isKitchenSeparate = isKitchenSeparate;
+	}
+
+	public boolean isParkingAvailable() {
+		return isParkingAvailable;
+	}
+
+	public void setParkingAvailable(boolean isParkingAvailable) {
+		this.isParkingAvailable = isParkingAvailable;
+	}
+
+	public String getDiscount() {
+		return discount;
+	}
+
+	public void setDiscount(String discount) {
+		this.discount = discount;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
 
 }
