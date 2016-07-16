@@ -1,9 +1,12 @@
 package org.RestaurantApp.common.entity;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
@@ -12,9 +15,27 @@ import javax.persistence.ManyToOne;
  * @author Prakash
  *
  */
+@Entity
+@javax.persistence.Table(name = "rest_table")
 public class Table {
+	@Id
+	@GeneratedValue
+	@Column(name = "id")
+	private int id;
+
 	@Column(name = "capacity")
 	private int capacity;
+
+	@Column(name = "is_available")
+	private boolean isAvailable;
+
+	@Column(name = "table_type")
+	@Enumerated(EnumType.STRING)
+	private SeatingTypeEnum tableType;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "restaurant_id", nullable = false)
+	private Restaurant restaurant;
 
 	public int getCapacity() {
 		return capacity;
@@ -48,16 +69,12 @@ public class Table {
 		this.restaurant = restaurant;
 	}
 
-	// enum type
-	@Column(name = "is_available")
-	private boolean isAvailable;
+	public int getId() {
+		return id;
+	}
 
-	@Column(name = "table_type")
-	@Enumerated(EnumType.STRING)
-	private SeatingTypeEnum tableType;
-
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "restaurant_id", nullable = false)
-	private Restaurant restaurant;
+	public void setId(int id) {
+		this.id = id;
+	}
 
 }
