@@ -1,5 +1,8 @@
 package org.RestaurantApp.common.entity;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -7,8 +10,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.Table;
 
 /**
  * 
@@ -16,12 +19,16 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name = "restaurant")
+@javax.persistence.Table(name = "restaurant")
 public class Restaurant {
+
 	@Id
 	@GeneratedValue
 	@Column(name = "id")
 	private int id;
+
+	@OneToMany(mappedBy = "restaurant")
+	private Set<Table> tables = new HashSet<Table>();
 
 	@Column(name = "name")
 	private String name;
@@ -59,6 +66,14 @@ public class Restaurant {
 
 	@OneToOne(fetch = FetchType.LAZY)
 	private Address address;
+
+	public Set<Table> getTables() {
+		return tables;
+	}
+
+	public void setTables(Set<Table> tables) {
+		this.tables = tables;
+	}
 
 	public int getId() {
 		return id;
