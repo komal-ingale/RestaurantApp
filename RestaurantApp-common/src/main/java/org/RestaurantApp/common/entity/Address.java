@@ -38,7 +38,7 @@ public class Address {
 	@Column(name = "postalCode")
 	private String postalCode;
 
-	@OneToOne(fetch = FetchType.LAZY, mappedBy = "address", cascade = CascadeType.ALL)
+	@OneToOne(fetch = FetchType.LAZY, mappedBy = "address", cascade = CascadeType.REMOVE)
 	private Restaurant restaurant;
 
 	public int getId() {

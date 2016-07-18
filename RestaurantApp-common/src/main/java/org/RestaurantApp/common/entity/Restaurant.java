@@ -67,6 +67,9 @@ public class Restaurant {
 	@OneToOne(fetch = FetchType.LAZY)
 	private Address address;
 
+	@OneToOne(fetch = FetchType.LAZY)
+	private Menu menu;
+
 	public Set<Table> getTables() {
 		return tables;
 	}
