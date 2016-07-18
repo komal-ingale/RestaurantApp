@@ -2,7 +2,8 @@ package org.RestaurantApp.data.service.util;
 
 import org.RestaurantApp.common.entity.Address;
 import org.RestaurantApp.common.entity.Restaurant;
-import org.RestaurantApp.common.entity.Table;
+import org.RestaurantApp.common.entity.RestaurantTable;
+import org.RestaurantApp.common.entity.TimeSlot;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistryBuilder;
@@ -20,11 +21,15 @@ public class HibernateUtil {
 	private static SessionFactory buildSessionFactory() {
 		try {
 			Configuration config = new Configuration();
-			config.addAnnotatedClass(Table.class);
-			config.addAnnotatedClass(Restaurant.class);
-			config.addAnnotatedClass(Address.class);
 
-			config.configure("resources/hibernate.cfg.xml");
+			config.addAnnotatedClass(Restaurant.class);
+			config.addAnnotatedClass(RestaurantTable.class);
+			config.addAnnotatedClass(Address.class);
+			// config.addAnnotatedClass(Reservation.class);
+			// config.addAnnotatedClass(ReservationId.class);
+			config.addAnnotatedClass(TimeSlot.class);
+
+			config.configure("Resources/hibernate.cfg.xml");
 			new SchemaUpdate(config).execute(true, true);
 
 			return config.buildSessionFactory(

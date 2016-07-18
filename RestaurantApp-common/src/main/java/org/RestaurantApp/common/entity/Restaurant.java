@@ -1,8 +1,5 @@
 package org.RestaurantApp.common.entity;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -10,7 +7,6 @@ import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 /**
@@ -27,8 +23,8 @@ public class Restaurant {
 	@Column(name = "id")
 	private int id;
 
-	@OneToMany(mappedBy = "restaurant")
-	private Set<Table> tables = new HashSet<Table>();
+	// @OneToMany(mappedBy = "restaurant")
+	// private Set<RestaurantTable> tables = new HashSet<RestaurantTable>();
 
 	@Column(name = "name")
 	private String name;
@@ -67,13 +63,8 @@ public class Restaurant {
 	@OneToOne(fetch = FetchType.LAZY)
 	private Address address;
 
-	public Set<Table> getTables() {
-		return tables;
-	}
-
-	public void setTables(Set<Table> tables) {
-		this.tables = tables;
-	}
+	// @OneToMany(mappedBy = "restaurants")
+	// private Set<TimeSlot> timeSlots = new HashSet<TimeSlot>();
 
 	public int getId() {
 		return id;
@@ -170,5 +161,13 @@ public class Restaurant {
 	public void setAddress(Address address) {
 		this.address = address;
 	}
+
+	// public Set<TimeSlot> getTimeSlots() {
+	// return timeSlots;
+	// }
+	//
+	// public void setTimeSlots(Set<TimeSlot> timeSlots) {
+	// this.timeSlots = timeSlots;
+	// }
 
 }

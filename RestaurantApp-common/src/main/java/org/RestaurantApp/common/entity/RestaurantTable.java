@@ -4,11 +4,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /**
  * 
@@ -16,8 +14,8 @@ import javax.persistence.ManyToOne;
  *
  */
 @Entity
-@javax.persistence.Table(name = "rest_table")
-public class Table {
+@Table(name = "rest_table")
+public class RestaurantTable {
 	@Id
 	@GeneratedValue
 	@Column(name = "id")
@@ -33,9 +31,13 @@ public class Table {
 	@Enumerated(EnumType.STRING)
 	private SeatingTypeEnum tableType;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "restaurant_id", nullable = false)
-	private Restaurant restaurant;
+	// @ManyToOne(fetch = FetchType.LAZY)
+	// @JoinColumn(name = "restaurant_id", nullable = false)
+	// private Restaurant restaurant;
+
+	// @OneToMany(targetEntity = Reservation.class, mappedBy =
+	// "reservationId.table")
+	// private List<Reservation> reservations = new ArrayList<Reservation>();
 
 	public int getCapacity() {
 		return capacity;
@@ -61,13 +63,13 @@ public class Table {
 		this.tableType = tableType;
 	}
 
-	public Restaurant getRestaurant() {
-		return restaurant;
-	}
-
-	public void setRestaurant(Restaurant restaurant) {
-		this.restaurant = restaurant;
-	}
+	// public Restaurant getRestaurant() {
+	// return restaurant;
+	// }
+	//
+	// public void setRestaurant(Restaurant restaurant) {
+	// this.restaurant = restaurant;
+	// }
 
 	public int getId() {
 		return id;
@@ -76,5 +78,13 @@ public class Table {
 	public void setId(int id) {
 		this.id = id;
 	}
+
+	// public List<Reservation> getReservations() {
+	// return reservations;
+	// }
+	//
+	// public void setReservations(List<Reservation> reservations) {
+	// this.reservations = reservations;
+	// }
 
 }
