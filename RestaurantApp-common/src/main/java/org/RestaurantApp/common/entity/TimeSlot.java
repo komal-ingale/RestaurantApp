@@ -2,11 +2,8 @@ package org.RestaurantApp.common.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /****
@@ -31,9 +28,9 @@ public class TimeSlot {
 	@Column(name = "is_available")
 	private boolean isAvailable;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "restaurant_id", nullable = false)
-	private Restaurant restaurants;
+	// @ManyToOne(fetch = FetchType.LAZY)
+	// @JoinColumn(name = "restaurant_id", nullable = false)
+	// private Restaurant restaurants;
 
 	// @OneToMany(targetEntity = Reservation.class, mappedBy =
 	// "reservationId.timeSlot")
@@ -63,13 +60,13 @@ public class TimeSlot {
 		this.endTime = endTime;
 	}
 
-	public Restaurant getRestaurants() {
-		return restaurants;
-	}
-
-	public void setRestaurants(Restaurant restaurants) {
-		this.restaurants = restaurants;
-	}
+	// public Restaurant getRestaurants() {
+	// return restaurants;
+	// }
+	//
+	// public void setRestaurants(Restaurant restaurants) {
+	// this.restaurants = restaurants;
+	// }
 
 	// public List<Reservation> getReservations() {
 	// return reservations;

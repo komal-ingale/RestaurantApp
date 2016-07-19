@@ -1,5 +1,8 @@
 package org.RestaurantApp.common.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -7,6 +10,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 /**
@@ -23,8 +28,8 @@ public class Restaurant {
 	@Column(name = "id")
 	private int id;
 
-	// @OneToMany(mappedBy = "restaurant")
-	// private Set<RestaurantTable> tables = new HashSet<RestaurantTable>();
+	@OneToMany(mappedBy = "restaurant")
+	private List<RestaurantTable> tables = new ArrayList<RestaurantTable>();
 
 	@Column(name = "name")
 	private String name;
@@ -61,9 +66,11 @@ public class Restaurant {
 	private String discount;
 
 	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "address_id")
 	private Address address;
 
 	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "menu_id")
 	private Menu menu;
 
 	public int getId() {
@@ -162,12 +169,20 @@ public class Restaurant {
 		this.address = address;
 	}
 
-	// public Set<TimeSlot> getTimeSlots() {
-	// return timeSlots;
-	// }
-	//
-	// public void setTimeSlots(Set<TimeSlot> timeSlots) {
-	// this.timeSlots = timeSlots;
-	// }
+	public List<RestaurantTable> getTables() {
+		return tables;
+	}
+
+	public void setTables(List<RestaurantTable> tables) {
+		this.tables = tables;
+	}
+
+	public Menu getMenu() {
+		return menu;
+	}
+
+	public void setMenu(Menu menu) {
+		this.menu = menu;
+	}
 
 }

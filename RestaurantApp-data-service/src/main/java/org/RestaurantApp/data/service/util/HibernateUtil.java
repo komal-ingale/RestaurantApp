@@ -1,6 +1,8 @@
 package org.RestaurantApp.data.service.util;
 
 import org.RestaurantApp.common.entity.Address;
+import org.RestaurantApp.common.entity.Item;
+import org.RestaurantApp.common.entity.Menu;
 import org.RestaurantApp.common.entity.Restaurant;
 import org.RestaurantApp.common.entity.RestaurantTable;
 import org.RestaurantApp.common.entity.TimeSlot;
@@ -25,6 +27,8 @@ public class HibernateUtil {
 			config.addAnnotatedClass(Restaurant.class);
 			config.addAnnotatedClass(RestaurantTable.class);
 			config.addAnnotatedClass(Address.class);
+			config.addAnnotatedClass(Menu.class);
+			config.addAnnotatedClass(Item.class);
 			// config.addAnnotatedClass(Reservation.class);
 			// config.addAnnotatedClass(ReservationId.class);
 			config.addAnnotatedClass(TimeSlot.class);

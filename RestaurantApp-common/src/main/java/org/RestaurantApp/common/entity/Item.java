@@ -34,7 +34,58 @@ public class Item {
 	@Enumerated(EnumType.STRING)
 	private ItemEnum itemType;
 
+	@Column(name = "description")
+	private String description;
+
 	@Column(name = "is_veg")
 	private boolean isVeg;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Menu getMenu() {
+		return menu;
+	}
+
+	public void setMenu(Menu menu) {
+		this.menu = menu;
+	}
+
+	public String getItemName() {
+		return itemName;
+	}
+
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
+	}
+
+	public ItemEnum getItemType() {
+		return itemType;
+	}
+
+	public void setItemType(ItemEnum itemType) {
+		this.itemType = itemType;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public boolean isVeg() {
+		return isVeg;
+	}
+
+	public void setVeg(boolean isVeg) {
+		this.isVeg = isVeg;
+	}
 
 }

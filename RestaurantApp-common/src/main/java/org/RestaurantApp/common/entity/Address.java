@@ -1,12 +1,9 @@
 package org.RestaurantApp.common.entity;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -38,8 +35,9 @@ public class Address {
 	@Column(name = "postalCode")
 	private String postalCode;
 
-	@OneToOne(fetch = FetchType.LAZY, mappedBy = "address", cascade = CascadeType.REMOVE)
-	private Restaurant restaurant;
+	// @OneToOne(fetch = FetchType.LAZY, mappedBy = "address", cascade =
+	// CascadeType.REMOVE)
+	// private Restaurant restaurant;
 
 	public int getId() {
 		return id;
@@ -89,12 +87,12 @@ public class Address {
 		this.postalCode = postalCode;
 	}
 
-	public Restaurant getRestaurant() {
-		return restaurant;
-	}
-
-	public void setRestaurant(Restaurant restaurant) {
-		this.restaurant = restaurant;
-	}
+	// public Restaurant getRestaurant() {
+	// return restaurant;
+	// }
+	//
+	// public void setRestaurant(Restaurant restaurant) {
+	// this.restaurant = restaurant;
+	// }
 
 }
