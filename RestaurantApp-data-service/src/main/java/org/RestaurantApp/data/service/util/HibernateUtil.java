@@ -6,6 +6,7 @@ import org.RestaurantApp.common.entity.Menu;
 import org.RestaurantApp.common.entity.Restaurant;
 import org.RestaurantApp.common.entity.RestaurantTable;
 import org.RestaurantApp.common.entity.TimeSlot;
+import org.RestaurantApp.common.entity.User;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistryBuilder;
@@ -29,6 +30,7 @@ public class HibernateUtil {
 			config.addAnnotatedClass(Address.class);
 			config.addAnnotatedClass(Menu.class);
 			config.addAnnotatedClass(Item.class);
+			config.addAnnotatedClass(User.class);
 			// config.addAnnotatedClass(Reservation.class);
 			// config.addAnnotatedClass(ReservationId.class);
 			config.addAnnotatedClass(TimeSlot.class);
