@@ -1,5 +1,8 @@
 package org.RestaurantApp.common.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -9,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -38,9 +42,8 @@ public class RestaurantTable {
 	@JoinColumn(name = "restaurant_id")
 	private Restaurant restaurant;
 
-	// @OneToMany(targetEntity = Reservation.class, mappedBy =
-	// "reservationId.table")
-	// private List<Reservation> reservations = new ArrayList<Reservation>();
+	@OneToMany(targetEntity = Reservation.class, mappedBy = "reservationId.table")
+	private List<Reservation> reservations = new ArrayList<Reservation>();
 
 	public int getCapacity() {
 		return capacity;
@@ -82,12 +85,12 @@ public class RestaurantTable {
 		this.id = id;
 	}
 
-	// public List<Reservation> getReservations() {
-	// return reservations;
-	// }
-	//
-	// public void setReservations(List<Reservation> reservations) {
-	// this.reservations = reservations;
-	// }
+	public List<Reservation> getReservations() {
+		return reservations;
+	}
+
+	public void setReservations(List<Reservation> reservations) {
+		this.reservations = reservations;
+	}
 
 }

@@ -3,9 +3,11 @@ package org.RestaurantApp.data.service.util;
 import org.RestaurantApp.common.entity.Address;
 import org.RestaurantApp.common.entity.Item;
 import org.RestaurantApp.common.entity.Menu;
+import org.RestaurantApp.common.entity.Reservation;
+import org.RestaurantApp.common.entity.ReservationId;
 import org.RestaurantApp.common.entity.Restaurant;
 import org.RestaurantApp.common.entity.RestaurantTable;
-import org.RestaurantApp.common.entity.TimeSlot;
+import org.RestaurantApp.common.entity.TimeSlotTypeEnum;
 import org.RestaurantApp.common.entity.User;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -30,10 +32,11 @@ public class HibernateUtil {
 			config.addAnnotatedClass(Address.class);
 			config.addAnnotatedClass(Menu.class);
 			config.addAnnotatedClass(Item.class);
+
 			config.addAnnotatedClass(User.class);
-			// config.addAnnotatedClass(Reservation.class);
-			// config.addAnnotatedClass(ReservationId.class);
-			config.addAnnotatedClass(TimeSlot.class);
+			config.addAnnotatedClass(TimeSlotTypeEnum.class);
+			config.addAnnotatedClass(Reservation.class);
+			config.addAnnotatedClass(ReservationId.class);
 
 			config.configure("Resources/hibernate.cfg.xml");
 			new SchemaUpdate(config).execute(true, true);

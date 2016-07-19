@@ -74,6 +74,10 @@ public class Restaurant {
 	@JoinColumn(name = "menu_id")
 	private Menu menu;
 
+	@Column(name = "time_slot_type")
+	@Enumerated(EnumType.STRING)
+	private TimeSlotTypeEnum timeSlotType;
+
 	public int getId() {
 		return id;
 	}
@@ -184,6 +188,14 @@ public class Restaurant {
 
 	public void setMenu(Menu menu) {
 		this.menu = menu;
+	}
+
+	public TimeSlotTypeEnum getTimeSlotType() {
+		return timeSlotType;
+	}
+
+	public void setTimeSlotType(TimeSlotTypeEnum timeSlotType) {
+		this.timeSlotType = timeSlotType;
 	}
 
 }
