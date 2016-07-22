@@ -8,6 +8,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>RestaurantApp-common</artifactId>
+  <packaging>jar</packaging>
   <name>RestaurantApp-common</name>
   <url>http://maven.apache.org</url>
   <properties>
