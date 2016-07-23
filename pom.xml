@@ -48,6 +48,7 @@
 	<modules>
 		<module>RestaurantApp-common</module>
 		<module>RestaurantApp-data-service</module>
+		<module>RestaurantApp-data-persistent-layer</module>
 	</modules>
 
 	<build>

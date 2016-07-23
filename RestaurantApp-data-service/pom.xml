@@ -6,9 +6,9 @@
 	<parent>
 		<groupId>RestaurantApp</groupId>
 		<artifactId>RestaurantApp</artifactId>
-		
+
 		<version>0.0.1-SNAPSHOT</version>
-		
+
 
 	</parent>
 
@@ -31,11 +31,8 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
-		<!-- <dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-			<version>${spring.version}</version>
-		</dependency> -->
+		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-webmvc</artifactId> 
+			<version>${spring.version}</version> </dependency> -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -55,6 +52,12 @@
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>RestaurantApp-common</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>RestaurantApp-data-persistent-layer</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
