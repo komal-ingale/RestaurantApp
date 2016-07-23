@@ -33,7 +33,7 @@ public class Restaurantservice {
 		}
 	}
 
-	public List<Restaurant> getAllRestaurants(Restaurant restaurant) throws Exception {
+	public List<Restaurant> getAllRestaurants() throws Exception {
 		logger.info("Entering getAllRestaurants ");
 		SessionFactory sessionFactory = HibernateSessionUtil.getCurrentSessionTransaction();
 		try {

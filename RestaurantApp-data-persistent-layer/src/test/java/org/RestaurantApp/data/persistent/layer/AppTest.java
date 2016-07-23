@@ -1,5 +1,7 @@
 package org.RestaurantApp.data.persistent.layer;
 
+import java.util.List;
+
 import org.RestaurantApp.common.entity.Restaurant;
 import org.RestaurantApp.data.persistent.layer.service.Restaurantservice;
 
@@ -44,4 +46,20 @@ public class AppTest extends TestCase {
 
 		assertTrue(true);
 	}
+
+	public void testAllRest() {
+		Integer actual = 0;
+		Integer expected = 1;
+		try {
+			List<Restaurant> allRestaurants = Restaurantservice.getInstance().getAllRestaurants();
+			actual = allRestaurants.size();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			assertFalse(true);
+			e.printStackTrace();
+		}
+
+		assertEquals(expected, actual);
+	}
+
 }

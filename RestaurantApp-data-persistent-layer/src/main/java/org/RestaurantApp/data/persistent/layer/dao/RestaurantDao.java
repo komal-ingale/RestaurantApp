@@ -6,8 +6,8 @@ import org.RestaurantApp.common.entity.Restaurant;
 import org.RestaurantApp.data.persistence.layer.util.HibernateUtil;
 import org.RestaurantApp.data.persistent.layer.service.Restaurantservice;
 import org.apache.log4j.Logger;
+import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -38,10 +38,12 @@ public class RestaurantDao {
 	public List<Restaurant> getAllRestaurants() {
 		logger.info("Entering RestaurantDao getAllRestaurants");
 		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-		String hql = "FROM restaurant";
+		// String hql = "FROM restaurant";
+
 		Session session = sessionFactory.getCurrentSession();
-		Query query = session.createQuery(hql);
-		List<Restaurant> results = query.list();
+		// Query query = session.createQuery(hql);
+		Criteria cr = session.createCriteria(Restaurant.class);
+		List<Restaurant> results = cr.list();
 		if (results.isEmpty()) {
 			logger.info("No Restaurants retrieved from Restaurant table.");
 
