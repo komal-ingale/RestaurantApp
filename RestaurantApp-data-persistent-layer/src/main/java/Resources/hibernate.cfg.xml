@@ -14,7 +14,7 @@
 			root
 		</property>
 		<property name="hibernate.connection.password">
-			root
+			prak2310
 		</property>
 	</session-factory>
 </hibernate-configuration>

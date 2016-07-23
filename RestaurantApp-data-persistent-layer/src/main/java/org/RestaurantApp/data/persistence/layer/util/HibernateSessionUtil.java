@@ -1,4 +1,4 @@
-package org.RestaurantApp.data.service.util;
+package org.RestaurantApp.data.persistence.layer.util;
 
 import org.hibernate.SessionFactory;
 
