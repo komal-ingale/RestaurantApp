@@ -27,4 +27,18 @@ public class RestaurantController {
 
 	}
 
+	// @RequestMapping(value = "/add", method = RequestMethod.POST)
+	//
+	// public @ResponseBody Restaurant addRestaurant(@RequestBody Restaurant
+	// restaurant) {
+	//
+	// // do business logic
+	// try {
+	// Restaurantservice.getInstance().createRestaurant(restaurant);
+	// } catch (Exception e) {
+	// // TODO Auto-generated catch block
+	// e.printStackTrace();
+	// }
+	// return restaurant;
+	// }
 }
