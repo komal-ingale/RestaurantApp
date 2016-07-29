@@ -1,10 +1,10 @@
-package org.RestaurantApp.data.persistent.layer.service;
+package org.RestaurantApp.data.service.layer;
 
 import java.util.List;
 
 import org.RestaurantApp.common.entity.Restaurant;
-import org.RestaurantApp.data.persistence.layer.util.HibernateSessionUtil;
-import org.RestaurantApp.data.persistent.layer.dao.RestaurantDao;
+import org.RestaurantApp.data.service.dao.RestaurantDao;
+import org.RestaurantApp.data.service.util.HibernateSessionUtil;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;

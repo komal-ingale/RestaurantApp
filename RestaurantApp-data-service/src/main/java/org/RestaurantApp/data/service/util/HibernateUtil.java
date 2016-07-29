@@ -1,4 +1,4 @@
-package org.RestaurantApp.data.persistence.layer.util;
+package org.RestaurantApp.data.service.util;
 
 import org.RestaurantApp.common.entity.Address;
 import org.RestaurantApp.common.entity.Item;
@@ -38,7 +38,7 @@ public class HibernateUtil {
 			config.addAnnotatedClass(Reservation.class);
 			config.addAnnotatedClass(ReservationId.class);
 
-			config.configure("Resources/hibernate.cfg.xml");
+			config.configure("hibernate.cfg.xml");
 			new SchemaUpdate(config).execute(true, true);
 
 			return config.buildSessionFactory(

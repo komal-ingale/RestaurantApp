@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.RestaurantApp.common.entity.Restaurant;
-import org.RestaurantApp.data.persistent.layer.service.Restaurantservice;
+import org.RestaurantApp.data.service.layer.Restaurantservice;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
