@@ -78,6 +78,9 @@ public class Restaurant {
 	@Enumerated(EnumType.STRING)
 	private TimeSlotTypeEnum timeSlotType;
 
+	@Column(name = "image", columnDefinition = "LONGBLOB")
+	private byte[] image;
+
 	public int getId() {
 		return id;
 	}
@@ -196,6 +199,14 @@ public class Restaurant {
 
 	public void setTimeSlotType(TimeSlotTypeEnum timeSlotType) {
 		this.timeSlotType = timeSlotType;
+	}
+
+	public byte[] getImage() {
+		return image;
+	}
+
+	public void setImage(byte[] image) {
+		this.image = image;
 	}
 
 }
